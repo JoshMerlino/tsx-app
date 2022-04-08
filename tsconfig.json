@@ -1,7 +1,6 @@
 {
 	"compilerOptions": {
 		"target": "ESNext",
-		"useDefineForClassFields": true,
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
 		"allowJs": false,
 		"skipLibCheck": false,
@@ -13,9 +12,11 @@
 		"moduleResolution": "Node",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"noEmit": true,
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"declarationDir": "types",
 		"jsx": "react-jsx"
 	},
-	"include": ["app", "node_modules/vite-plugin-pwa/client.d.ts"],
-	"references": [{ "path": "./tsconfig.vite.json" }]
+	"include": ["src", "types.d.ts"],
+	"references": [{ "path": "./tsconfig.node.json" }]
 }
