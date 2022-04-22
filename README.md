@@ -14,6 +14,7 @@
 ```bash
 # Clone the repo
 git clone https://github.com/JoshMerlino/tsx-app -b (master | tailwind | photon) --single-branch -o upstream (my-app)
+git branch -m master
 ```
 
 Move into your new working directory.
