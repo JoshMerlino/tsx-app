@@ -33,7 +33,7 @@ export default defineConfig({
 			} ],
 			links: [ {
 				rel: "apple-touch-icon",
-				href: "/apple_touch_icon.png"
+				href: base + "/apple_touch_icon.png"
 			} ]
 		})
 	],
