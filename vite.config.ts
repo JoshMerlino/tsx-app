@@ -4,12 +4,8 @@ import path from "path";
 import { defineConfig } from "vite";
 import htmlPlugin from "vite-plugin-html-config";
 import { VitePWA } from "vite-plugin-pwa";
-import manifest from "./app/manifest.json";
-import pjson from "./package.json";
 import manifest, { base } from "./app/manifest.json";
-import { VitePWA } from "vite-plugin-pwa";
-import htmlPlugin from "vite-plugin-html-config";
-import path from "path";
+import pjson from "./package.json";
 
 config();
 
