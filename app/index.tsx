@@ -7,6 +7,8 @@ import { registerSW } from "virtual:pwa-register";
 import { base } from "./manifest.json";
 import ErrorBoundary from "./src/runtime/ErrorBoundry";
 import "styles/index.css";
+import Footer from "./src/components/Footer";
+import Drawer from "./src/components/Drawer";
 
 if ("serviceWorker" in navigator && !/localhost/.test(window.location.toString())) registerSW({
 	immediate: true
@@ -22,14 +24,20 @@ ReactDOM.render(
 		<ErrorBoundary>
 			<QueryClientProvider client={ queryClient }>
 				<BrowserRouter>
-					<Routes>
-						{ Object.values(pages).map((page, key) => <Route
-							key={ key }
-							path={ base + page.path.substring(1) }
-							caseSensitive={ page.caseSensitive || false }
-							element={ <page.default/> }/>
-						) }
-					</Routes>
+					<Drawer/>
+					<div className="xl:ml-[300px] min-h-[100vh] flex flex-col">
+						<div className="grow bg-gray-200 dark:bg-zinc-800">
+							<Routes>
+								{ Object.values(pages).map((page, key) => <Route
+									key={ key }
+									path={ base + page.path.substring(1) }
+									caseSensitive={ page.caseSensitive || false }
+									element={ <page.default/> }/>
+								) }
+							</Routes>
+						</div>
+						<Footer/>
+					</div>
 				</BrowserRouter>
 				{ !PRODUCTION && <ReactQueryDevtools/> }
 			</QueryClientProvider>
