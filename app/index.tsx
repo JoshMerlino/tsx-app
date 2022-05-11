@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { registerSW } from "virtual:pwa-register";
 import { base } from "./manifest.json";
 import ErrorBoundary from "./src/runtime/ErrorBoundry";
-import "styles/index.css";
+import "styles/index.less";
 import Footer from "./src/components/Footer";
 import Drawer from "./src/components/Drawer";
 
